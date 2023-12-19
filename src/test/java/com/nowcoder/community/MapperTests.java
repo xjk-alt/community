@@ -56,7 +56,7 @@ public class MapperTests {
 
     @Test
     public void updateUser() {
-        int rows = userMapper.updateStatus(150, 1);
+        int rows = userMapper.updateStatus(140, 1);
         System.out.println(rows);
 
         rows = userMapper.updateHeader(150, "http://www.nowcoder.com/102.png");
