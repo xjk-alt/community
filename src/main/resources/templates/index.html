@@ -26,25 +26,25 @@
 							<li class="nav-item ml-3 btn-group-vertical">
 								<a class="nav-link" th:href="@{/index}">Home</a>
 							</li>
-							<li class="nav-item ml-3 btn-group-vertical" th:if="${loginUser!=null}">
-								<a class="nav-link position-relative" href="site/letter.html">消息<span class="badge badge-danger">12</span></a>
+							<li class="nav-item ml-3 btn-group-vertical" >
+								<a class="nav-link position-relative" th:href="@{letter/list}">消息<span class="badge badge-danger" th:text="${allUnreadCount!=0?allUnreadCount:''}">12</span></a>
 							</li>
-							<li class="nav-item ml-3 btn-group-vertical" th:if="${loginUser==null}">
+							<li class="nav-item ml-3 btn-group-vertical" >
 								<a class="nav-link" th:href="@{/register}">Register</a>
 							</li>
-							<li class="nav-item ml-3 btn-group-vertical" th:if="${loginUser==null}">
+							<li class="nav-item ml-3 btn-group-vertical" >
 								<a class="nav-link" th:href="@{/login}">Login</a>
 							</li>
-							<li class="nav-item ml-3 btn-group-vertical dropdown" th:if="${loginUser!=null}">
+							<li class="nav-item ml-3 btn-group-vertical dropdown" >
 								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									<img th:src="${loginUser.headerUrl}" class="rounded-circle" style="width:30px;"/>
+									<img src="http://images.nowcoder.com/head/1t.png" class="rounded-circle" style="width:30px;"/>
 								</a>
 								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 									<a class="dropdown-item text-center" href="site/profile.html">Your profile</a>
-									<a class="dropdown-item text-center" th:href="@{/user/setting}">Account settings</a>
-									<a class="dropdown-item text-center" th:href="@{/logout}">Log out</a>
+									<a class="dropdown-item text-center" href="site/setting.html">Account settings</a>
+									<a class="dropdown-item text-center" th:href="@{/logout}">Logout</a>
 									<div class="dropdown-divider"></div>
-									<span class="dropdown-item text-center text-secondary" th:utext="${loginUser.username}">nowcoder</span>
+									<span class="dropdown-item text-center text-secondary" >nowcoder</span>
 								</div>
 							</li>
 						</ul>
