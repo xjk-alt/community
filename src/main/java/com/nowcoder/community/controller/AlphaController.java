@@ -63,7 +63,8 @@ public class AlphaController {
     // GET请求
 
     // /students?current=1&limit=20
-    @RequestMapping(path = "/students", method = RequestMethod.GET)
+    //@RequestMapping(path = "/students", method = RequestMethod.GET)
+    @GetMapping("/students")
     @ResponseBody
     public String getStudents(
             @RequestParam(name = "current", required = false, defaultValue = "1") int current,
